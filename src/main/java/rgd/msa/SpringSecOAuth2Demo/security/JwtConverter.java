@@ -15,15 +15,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 @Component
 public class JwtConverter implements Converter<Jwt, AbstractAuthenticationToken> {
-
     private final JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-
     private final JwtConverterProperties properties;
-
     public JwtConverter(JwtConverterProperties properties) {
         this.properties = properties;
     }
-
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {
         Collection<GrantedAuthority> authorities = Stream.concat(
@@ -55,3 +51,4 @@ public class JwtConverter implements Converter<Jwt, AbstractAuthenticationToken>
                 .collect(Collectors.toSet());
     }
 }
+

@@ -17,4 +17,8 @@ public class RestController {
     public ResponseEntity<String> sayHelloToUser(){
         return ResponseEntity.ok("Hello User");
     }
+    @GetMapping("/admin-and-user")
+    public ResponseEntity<String> sayHelloToUserAndAdmin(){
+        return ResponseEntity.ok("Hello Users");
+    }
 }
